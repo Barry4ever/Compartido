@@ -52,7 +52,7 @@ contract UserContract {
         return joinedUsers[addr];
     }
     
-    function TransferTo (uint amount, address to) public{
+    function TransferTo (uint amount, address to) public{ // No funciona
         msg.sender.send(amount);
     }
 
