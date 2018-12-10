@@ -10,32 +10,51 @@ contract UserContract {
         uint[] points;
         uint sumPoints;
         uint amount;
+        uint cash;
         uint[] lineup;
         int[] transactions; /// Numéricas, creo que tendríamos que hacer un array del objeto transacciones.
-        string wallet;
     }
+    
     mapping (address => User) private users;
     mapping (address => bool) private joinedUsers;
+    mapping (address => uint) private money;
     address[] total;
-
-    function joinUser(string Name, string surName, string nick, string wallet) public{
-        require(!userJoined(msg.sender));
+    address private owner;
+    
+    constructor() public payable{
+        owner=msg.sender;
+    }
+    
+    modifier isOwner(){
+        require(owner == msg.sender);
+        _;
+    }
+    
+    function joinUser(string Name, string surName, string nick) public{
+        //require(!userJoined(msg.sender));
         User storage user = users[msg.sender];
         user.name=Name;
         user.surName = surName;
         user.nick = nick;
-        user.wallet = wallet;
         joinedUsers[msg.sender] = true;
         total.push(msg.sender);
     }
+    
 
-    function getUser (address addr) public view returns (string,string,string,string){
-        require (userJoined(msg.sender));
-        User memory user = users[addr];
-        return (user.name, user.surName, user.nick, user.wallet);
+    function getUser (address addr) public view returns (string,string,string){
+       // require (userJoined(msg.sender));
+        //User memory user = users[addr];
+        User userf = users[addr];
+        return (userf.name, userf.surName, userf.nick);
     }
 
     function userJoined(address addr) private view returns (bool){
         return joinedUsers[addr];
     }
+    
+    function TransferTo (uint amount, address to) public{
+        msg.sender.send(amount);
+    }
+
+ 
 }
