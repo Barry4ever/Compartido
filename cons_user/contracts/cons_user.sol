@@ -39,8 +39,6 @@ contract UserContract {
         joinedUsers[msg.sender] = true;
         total.push(msg.sender);
     }
-    
-
     function getUser (address addr) public view returns (string,string,string){
        // require (userJoined(msg.sender));
         //User memory user = users[addr];
@@ -51,10 +49,11 @@ contract UserContract {
     function userJoined(address addr) private view returns (bool){
         return joinedUsers[addr];
     }
-    
-    function TransferTo (uint amount, address to) public{ // No funciona
-        msg.sender.send(amount);
-    }
 
- 
+}
+contract Sender {
+    
+    function send (address _receiver) payable {
+        _receiver.send(msg.value);
+    }
 }
