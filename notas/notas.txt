@@ -1,0 +1,4 @@
+await web3.eth.sendTransaction({ from: accounts[0], to: accounts[1], value: web3.toWei(15,'ether')});
+instance.get
+
+instanciar contract por truffle console PlayertoPlayer.deployed().then (c=> instance = c);
