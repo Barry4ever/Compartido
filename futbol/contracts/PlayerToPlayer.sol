@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+/*pragma solidity ^0.4.24;
 import "./SafeMath.sol";
 
 contract PlayertoPlayer{
@@ -37,4 +37,4 @@ contract PlayertoPlayer{
         return (msg.sender);
     }
 
-}
+}*/
