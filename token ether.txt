@@ -1,7 +1,15 @@
 https://steemit.com/spanish/@mondeja/ethereum-en-practica-parte-1-3-como-construir-tu-propia-criptomoneda-sin-tocar-una-linea-de-codigo
 https://miethereum.com/smart-contracts/erc20/
 
-pago.deployed().then(function(instance){app = instance})
+Transfer.deployed().then(function(instance){app = instance}) 0x4249fC23048a6E0ca448558eBC35f1Ca725E0b3f
 
 https://openzeppelin.org/
 
+truffle console web3
+
+web3.providers='http://localhost:8545'
+web3.eth.accounts
+let accounts=web3.eth.accounts
+accounts[0]
+web3.eth.defaultAccount='0x216348ed9ecc9876bfbf028dcd0ba7ec83e9bd72'
+> eth.sendTransaction({from:sender, to:receiver, value: amount})
