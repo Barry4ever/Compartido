@@ -1,5 +1,5 @@
 {
-  "name": "the-airline",
+  "name": "traspaso_jugador",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -21,7 +21,7 @@
     "react-dom": "16.4.2",
     "react-toastr": "3.0.0",
     "truffle-contract": "3.0.6",
-    "web3": "^1.0.0-beta.35",
+    "web3": "^1.0.0-beta.37",
     "webpack": "4.16.5",
     "webpack-cli": "3.1.0",
     "webpack-dev-server": "3.1.5"
@@ -29,6 +29,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "python": "0.0.4"
+    "assert": "^1.4.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "python": "0.0.4",
+    "solc": "npm "
   }
 }
